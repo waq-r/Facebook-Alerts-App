@@ -1,0 +1,11 @@
+The aim of this project is to provide a communication bridge between Library website and Facebook to deliver users library account notifications in their Facebook accounts. To achieve Facebook integration, Facebook integration platform would be studied to build an application compliant with its standards. Apart from that selection of  suitable available programming and database technologies which can be used to develop the integration application would be done. Using these selections a application that would take users library notifications from their email or library website and send it to users Facebook account would be created.  Precisely the key objectives of the project are
+Provision of a Facebook application
+User registration with application
+Retrieval of user’s library notices
+Development of user friendly web interface
+Interactivity with Ajax, Jquery etc
+Library notices display in user’s Facebook account
+User Facebook status updates 
+Database storage for all alerts and users
+
+The application focus would be providing a easier, time saving and convenient solution to keep users updated about their library account status without worrying about missing a book return deadline and taking away frustration of logging into library website or email account again and again to make sure they are not missing any important notification.

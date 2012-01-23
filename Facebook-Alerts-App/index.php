@@ -36,37 +36,7 @@ Class fbLink {
 		var_dump($this->uid);
 				echo '</pre>';
 		$this->getSavedSession();
-		/*$this->session = $this->facebook->getSession();
-
-
-		$me = null;
-		// Session based API call.
-		if ($this->session) {
-		  try {
-			$this->uid = $this->facebook->getUser();
-			$this->me = $this->facebook->api('/me');
-		  } catch (FacebookApiException $e) {
-			error_log($e);
-		  }
-		}
-		
-		$this->dbLink = new DB_mysql;
-		$this->loginLink($this->me);
-		$this->getSavedSession();
-		
-	}
-	//login/logout url
-	function loginLink($me){
-		// login or logout url will be needed depending on current user state.
-		if ($me) {
-		  $logoutUrl = $this->facebook->getLogoutUrl();
-		  //echo "<a href='$logoutUrl'>Logout</a>";
-		  //$this->getSavedSession();
-		} else {
-		  $loginUrl = $this->facebook->getLoginUrl(array('req_perms'=>'offline_access,publish_stream'));
-		  echo "<a href='$loginUrl'>Login to UoP Library Alerts App</a>";
-		}
-	*/}
+}
 
 	function getNewSession(){
 		$this->nsession = $this->facebook->getSession();
@@ -218,31 +188,7 @@ Class fbLink {
 	}
 }
 
-/*
-$facebook ->api(array(
-'method' => 'dashboard.incrementCount',
-'uid' => '636412539',
-'access_token' => '100189117367|fe812e2ff826cfa58146c407.1-636412539|Y3E2OZUQg85fh7os4AJhcQjuEZA'
-));
 
-
-
-$attachment =  array(
-'access_token' => '100189117367|fe812e2ff826cfa58146c407.1-636412539|Y3E2OZUQg85fh7os4AJhcQjuEZA',
- 'message' => "stored token message",);
-
-$facebook->api('/636412539/feed', 'POST', $attachment);
-/*
-
-
-		if(is_array($this->session)) {
-	echo '<pre>';
-	var_dump($this->session);
-	echo '</pre>';
-
-
-}
-*/
 
 
 

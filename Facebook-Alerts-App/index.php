@@ -1,6 +1,6 @@
 <?php
 
-require 'facebook.php';
+require 'php-sdk/src/facebook.php';
 $proc = TRUE;
 // Including config file and mysql class.
 include('../xmysqli/config.php');
@@ -27,7 +27,7 @@ Class fbLink {
 			 //echo '<pre>'.var_dump($_POST).'</pre>';
 		$this->facebook = new Facebook(array(
 		  'appId' => '100189117367',
-		  'secret' => '18f8e3dcb44daf55c609c7ed1d2a9142',
+		  'secret' => '00000000000000000000',
 		  'cookie' => true,
 		)); 
 		$this->dbLink = new DB_mysql;
@@ -119,7 +119,7 @@ Class fbLink {
 	
 	//register user with fb_id, lib_no
 	function saveUser(){
-							echo '<pre>'; var_dump($this->in); echo '</pre>';
+					echo '<pre>'; var_dump($this->in); echo '</pre>';
 
 		if(isset($this->in['lib_no'])){
 

@@ -287,54 +287,7 @@ else {
 	}
 }
   
-  //$msg = $eachmail->msg;
  
-/*  $body1 = preg_split("/".$msg['boundry']."/", $msg['body'], 3);
-  echo '<pre>';
-var_dump($body1[1]);
-echo '</pre>';
-  $body = $body1[1];
- // unset($msg['body'], $body1);
- */
-
-	/*
-	//find email boundry to select first 1000 chars from boundry and save in DB
-	preg_match("/=[a-z0-9_]+/", $msgpart['headers']['content-type'], $boundry);
-	str_replace("=", "", $boundry[0]);
-	$st = strpos($body, $boundry[0])+strlen($boundry[0])+1;
-	$dbLink->query("INSERT INTO `lib_emails` (`email`, `email_sub`, `email_body`, `date`)
-VALUES ('".$msg['from']."', '".$msg['subject']."', '".addslashes(substr($body,$st, $st+999))."', now())");
-
-    echo '<pre>';
-var_dump($boundry, $msgpart['headers']['content-type'], $st);
-echo '</pre>';
-* /
-
-/*
-$man = $dbLink->query("SELECT `email_body` FROM `lib_emails` where email = 'support@manplay.com'");
-$spos = strpos($man[0]['email_body'], "<body>");
-echo substr($man[0]['email_body'], $spos+6, 999);
-*/
-
-
-
-
-
-     /*   if (strlen($msg['subject']) > 70) {
-            $msg['subject'] = substr($msg['subject'], 0,70);
-            $msg['subject'] = $msg['subject']."...";
-		}
-        if(!is_null($msg['from'] | $msg['subject'])){
-          dibi::query('INSERT INTO [mail]', $msg);
-		}
-		else {
-			echo "saving whole email because regex failed to fetch";
-		}
-*/
-
-		//$dbLink->query('INSERT INTO log(date,log) VALUES (now(), "asdf")');
-
-// BUT! Oh no, we have a few invalid queries, let's take a look at our first auxiliar array: 
 if (isset($dbErrors)) {
   $num_errors = count($dbErrors);
   echo '</pre><h3>All the queries executed, but we have some errors!</h3><pre>';
@@ -345,69 +298,6 @@ else $num_errors = 0;
 
 
 
-/*
-Class EmailParts {
-	//public $email; // This will be the variable holding the data.
-	public $fd;
-	//public $fdw;
-
-	public function __construct(){
-
-		// Read the message from STDIN 
-		$this->fd = fopen("php://stdin", "r");
-}
-
-public function mailToVar(){
-		while (!feof($this->fd)) {
-		$mailTxt .= fread($this->fd, 1024);
-		}
-		fclose($this->fd);
-
-		$mail = mailparse_msg_create();
-		mailparse_msg_parse($mail,$mailTxt);
-		$msgpart = mailparse_msg_get_part_data($mail);
-
-		$msgHeader['to'] = $msgpart['headers']['to'];
-		$msgHeader['subject'] = $msgpart['headers']['subject'];
-		$msgHeader['from'] = $msgpart['headers']['from'];
-
-		return $msgHeader;
-	}
-
-}
-ob_start();
-
-$everymail = new EmailParts;
-$mailHeader = $everymail->mailToVar();
-echo '<pre>';
-var_dump($mailHeader);
-echo '</pre>';
-
-$content = ob_get_contents();
-ob_clean();
-
-$fdw = fopen(__DIR__ . "/mail.html", "w+");
-fwrite($fdw, $content);
-fclose($fdw);
-*/
-
-
-
-/* Script End */
-
-/* Read the message from STDIN 
-$fd = fopen("php://stdin", "r");
-$email = ""; // This will be the variable holding the data.
-while (!feof($fd)) {
-$email .= fread($fd, 1024);
-}
-fclose($fd);
-
-
-$fdw = fopen(__DIR__ . "/mail8.txt", "w+");
-fwrite($fdw, $email);
-fclose($fdw);
- Script End */
 
 
 
